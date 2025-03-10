@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Task Manager</h1>
+        
+        <ul class="todo-list">
+            {% for todo in todos %}
+            <li class="todo-item">
+                <input type="checkbox" class="checkbox" data-index="{{ loop.index0 }}" {% if todo['done'] %} checked {% endif %}>
+                <span class="task {% if todo['done'] %}completed{% endif %}">{{ todo['task'] }}</span>
+                <div class="actions">
+                    <a href="{{ url_for('edit', index=loop.index0)}}" class="edit-btn">Edit</a>
+                    <a href="{{ url_for('delete', index=loop.index0)}}" class="delete-btn">Delete</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <form action="{{ url_for('add')}}" method="post" class="todo-form">
+            <input type="text" name="todo" placeholder="Add new task..." required>
+            <button type="submit" class="add-btn">Add Todo</button>
+        </form>
+    </div>
+
+</body>
+</html>

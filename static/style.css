@@ -1,0 +1,104 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: hsl(82, 20%, 38%);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1 {
+    color: #333;
+}
+
+/* To-Do List */
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: hwb(0 68% 31%);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.todo-item:hover {
+    background: hwb(155 16% 23%);
+}
+
+/* Checkbox */
+.checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: hsl(211, 98%, 35%);
+    color: white;
+}
+
+.delete-btn {
+    background: hsl(354, 100%, 35%);
+    color: white;
+}
+
+/* Form */
+.todo-form {
+    margin-top: 30px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.add-btn {
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-btn:hover {
+    background: #218838;
+}
